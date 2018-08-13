@@ -4,7 +4,7 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v4.8.1, mobirise.com">
+  <meta name="generator" content="Program">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
   <meta name="description" content="Web Builder Description">
@@ -40,7 +40,7 @@
         <div class="menu-logo">
             <div class="navbar-brand">
                 <span class="navbar-logo">
-                    <a href="#">
+                    <a href="index.html">
                         <img src="assets/images/logo2.png" alt="Reunite" style="height: 3.8rem;">
                     </a>
                 </span>
@@ -175,8 +175,8 @@
                                                     </div>
                                                     <form action="POST">
                                                         <input type="file" name="demoImage" onchange="showPreview()" />
-                                                        Preview:
-                                                        <img alt="" src="" width="500">
+                                                        <!--Preview:
+                                                        <img alt="" src="" width="500">-->
                                                         <button type="button" ng-click="compressAndUpload()">Upload</button>
                                                     </form>
                                         
@@ -271,8 +271,8 @@
                                                 </div>
                                                 <form action="POST">
                                                     <input type="file" name="demoImage" onchange="showPreview()" />
-                                                    Preview:
-                                                    <img alt="" src="" width="500">
+                                                    <!--Preview:
+                                                    <img alt="" src="" width="500">-->
                                                     <button type="button" ng-click="compressAndUpload()">Upload</button>
                                                 </form>
                                     
@@ -387,6 +387,23 @@
         </div>
     </div>
 </section>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA5Afrm-mTqXpAl1gwJJoI0DseBwUkX1Dk",
+    authDomain: "reliefreunite123.firebaseapp.com",
+    databaseURL: "https://reliefreunite123.firebaseio.com",
+    projectId: "reliefreunite123",
+    storageBucket: "reliefreunite123.appspot.com",
+    messagingSenderId: "264220375831"
+  };
+  firebase.initializeApp(config);
+  const storageService = firebase.storage();
+const storageRef = storageService.ref();
+</script>
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
