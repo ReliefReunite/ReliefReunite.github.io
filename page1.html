@@ -18,11 +18,12 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  <link href="css/bootstrap-imgupload.css" rel="stylesheet">
   
   
   
 </head>
-<body>
+<body ng-controller="demoController">
   <section class="menu cid-r0kqnUFElh" once="menu" id="menu2-l">
 
     
@@ -172,6 +173,12 @@
                                                         <label class="form-control-label mbr-fonts-style display-7" for="message-form1-b">Describe your situation</label>
                                                         <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-b"></textarea>
                                                     </div>
+                                                    <form action="POST">
+                                                        <input type="file" name="demoImage" onchange="showPreview()" />
+                                                        Preview:
+                                                        <img alt="" src="" width="500">
+                                                        <button type="button" ng-click="compressAndUpload()">Upload</button>
+                                                    </form>
                                         
                                                     <span class="input-group-btn">
                                                         <button href="#" type="submit" class="btn btn-primary btn-form display-4">SEND FORM</button>
@@ -262,6 +269,12 @@
                                                     <label class="form-control-label mbr-fonts-style display-7" for="message-form1-b">Describe your situation</label>
                                                     <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-b"></textarea>
                                                 </div>
+                                                <form action="POST">
+                                                    <input type="file" name="demoImage" onchange="showPreview()" />
+                                                    Preview:
+                                                    <img alt="" src="" width="500">
+                                                    <button type="button" ng-click="compressAndUpload()">Upload</button>
+                                                </form>
                                     
                                                 <span class="input-group-btn">
                                                     <button href="#" type="submit" class="btn btn-primary btn-form display-4">SEND FORM</button>
@@ -386,6 +399,11 @@
   <script src="assets/mbr-tabs/mbr-tabs.js"></script>
   <script src="assets/dropdown/js/script.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  <script src="//code.jquery.com/jquery-1.12.2.min.js"></script>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="JIC.js"></script>
+  <script type="text/javascript" src="custom.js"></script>
+    
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i></i></a></div>
