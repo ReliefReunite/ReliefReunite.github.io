@@ -730,6 +730,7 @@ pre {
 .form2 .form-control {
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
+  
 }
 .form2 .input-group-btn a.btn {
   border-top-left-radius: 0 !important;
