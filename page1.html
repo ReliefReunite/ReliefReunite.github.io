@@ -18,7 +18,9 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link href="css/bootstrap-imgupload.css" rel="stylesheet">
+
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
   
   
   
@@ -129,7 +131,7 @@
                                                     Thanks for filling out the form!
                                                 </div>
                                         
-                                                <form class="mbr-form" action="#/" method="post" data-form-title="Lost Form"><input type="hidden" name="email" data-form-email="true" value="GszkY6ZiRltEKGSLZ1WZgbB6sTOfu78VwpGjuYe3XUqHB/8Dxy/JfqXQhJQKa2IE+RBV3Z2eOe3rSbW+/Np434Z3ACOOVc3xD7+Fhx+mJhG+mCeQuesp7wMvSlUbmVeR" data-form-field="Email">
+                                                <form class="sucess-none" action="#/" method="post" data-form-title="Lost Form"><input type="hidden" name="email" data-form-email="true" value="GszkY6ZiRltEKGSLZ1WZgbB6sTOfu78VwpGjuYe3XUqHB/8Dxy/JfqXQhJQKa2IE+RBV3Z2eOe3rSbW+/Np434Z3ACOOVc3xD7+Fhx+mJhG+mCeQuesp7wMvSlUbmVeR" data-form-field="Email">
                                                     <div class="row row-sm-offset">
                                                         <div class="col-md-4 multi-horizontal" data-for="name">
                                                             <div class="form-group">
@@ -152,13 +154,13 @@
                                                         <div class="col-md-4 multi-horizontal" data-for="phone">
                                                             <div class="form-group">
                                                                 <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-b">Phone</label>
-                                                                <input type="tel" class="form-control" name="phone" data-form-field="Phone number" id="phone-form1-b">
+                                                                <input type="tel" class="form-control" name="phone" data-form-field="Phone" id="phone-form1-b">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 horizontal" data-for="email">
                                                             <div class="form-group">
                                                                 <label class="form-control-label mbr-fonts-style display-7" for="email-form1-b">Email</label>
-                                                                <input type="email" class="form-control" name="email" data-form-field="Email ID" required="" id="email-form1-b" >
+                                                                <input type="email" class="form-control" name="email" data-form-field="Email" required="" id="email-form1-b" >
                                                             </div>
                                                         </div>
                                                         <div class="col-md-4 multi-horizontal" data-for="IdentificationMark">
@@ -225,42 +227,41 @@
                                                 Thanks for filling out the form!
                                             </div>
                                     
-                                            <form class="mbr-form" action="#/" method="post" data-form-title="Found Form"><input type="hidden" name="email" data-form-email="true" value="GszkY6ZiRltEKGSLZ1WZgbB6sTOfu78VwpGjuYe3XUqHB/8Dxy/JfqXQhJQKa2IE+RBV3Z2eOe3rSbW+/Np434Z3ACOOVc3xD7+Fhx+mJhG+mCeQuesp7wMvSlUbmVeR" data-form-field="Email">
-                                                <div class="row row-sm-offset">
-                                                    <div class="col-md-4 multi-horizontal" data-for="name">
+                                            <form class="sucess-none" action="#/" method="post" id = "newFound" data-form-title="Found Form"><input type="hidden">
+                                                    <div class="col-md-4 multi-horizontal" data-for="Name">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="name-form1-b">Your Name</label>
-                                                            <input type="text" class="form-control" name="name" data-form-field="Name" required="" id="name-form1-b">
+                                                            <input type="text" class="form-control" name="Name" data-form-field="Name" required="" id="Name">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 multi-horizontal" data-for="name">
+                                                    <div class="col-md-4 multi-horizontal" data-for="KidName">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="KidName-form1-b">Name of Found Person</label>
-                                                            <input type="text" class="form-control" name="KidName" data-form-field="KidName" required="" id="KidName-form1-b">
+                                                            <input type="text" class="form-control" name="KidName" data-form-field="KidName" required="" id="KidName">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 multi-horizontal" data-for="age">
+                                                    <div class="col-md-4 multi-horizontal" data-for="Age">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="age-form1-b">Age</label>
-                                                            <input type="number" class="form-control" name="Age" data-form-field="Age" required="" id="KidName-form1-b">
+                                                            <input type="number" class="form-control" name="Age" data-form-field="Age" required="" id="Age">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 multi-horizontal" data-for="phone">
+                                                    <div class="col-md-4 multi-horizontal" data-for="Phone">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-b">Phone</label>
-                                                            <input type="tel" class="form-control" name="phone" data-form-field="Phone number" id="phone-form1-b">
+                                                            <input type="tel" class="form-control" name="Phone" data-form-field="Phone" id="Phone">
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-4 horizontal" data-for="email">
+                                                    <div class="col-md-4 horizontal" data-for="Email">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="email-form1-b">Email</label>
-                                                            <input type="email" class="form-control" name="email" data-form-field="Email ID" required="" id="email-form1-b" >
+                                                            <input type="email" class="form-control" name="Email" data-form-field="Email" required="" id="Email" >
                                                         </div>
                                                     </div>
                                                     <div class="col-md-4 multi-horizontal" data-for="IdentificationMark">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="name-form1-b">Identification Mark</label>
-                                                            <input type="text" class="form-control" name="IdentificationMark" data-form-field="IdentificationMark" required="" id="IdentificationMark-form1-b">
+                                                            <input type="text" class="form-control" name="IdentificationMark" data-form-field="IdentificationMark" required="" id="IdentificationMark">
                                                         </div>
                                                     </div>
                                                    
@@ -277,92 +278,15 @@
                                                 </form>
                                     
                                                 <span class="input-group-btn">
-                                                    <button href="#" type="submit" class="btn btn-primary btn-form display-4">SEND FORM</button>
+                                                    <button type="submit" value="Submit" name="submit" id = "submitFound" class="btn btn-primary btn-form display-4">SEND FORM</button>
                                                 </span>
                                             </form>
                                     </div>
                                 </div>
                             </div>
-                        </section>
-                        
-
-                        
-
-                        
+                        </section>                        
                     </div>
-                </div>
-
-                <div id="tab3" class="tab-pane  mbr-table" role="tabpanel">
-                    <div class="row tab-content-row">
-                        <div class="col-xs-12 col-md-6">
-                            
-                            
-                            <p class="mbr-section-text  align-center mbr-fonts-style display-7">
-                                Choose from the large selection  pre-made blocks - full-screen intro, bootstrap carousel, slider, responsive image gallery with, parallax scrolling, sticky header and more.
-                            </p>
-                        </div>
-
-                        
-
-                        
-
-                        
-                    </div>
-                </div>
-
-                <div id="tab4" class="tab-pane  mbr-table" role="tabpanel">
-                    <div class="row tab-content-row">
-                        <div class="col-xs-12 col-md-6">
-                            
-                            
-                            <p class="mbr-section-text  align-center mbr-fonts-style display-7">
-                                No special actions required, all sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site, it will adapt automagically.
-                            </p>
-                        </div>
-
-                        
-
-                        
-
-                        
-                    </div>
-                </div>
-
-                <div id="tab5" class="tab-pane  mbr-table" role="tabpanel">
-                    <div class="row tab-content-row">
-                        <div class="col-xs-12 col-md-6">
-                            
-                            
-                            <p class="mbr-section-text  align-center mbr-fonts-style display-7">
-                                Cut down the development time with drag-and-drop website builder. Drop the blocks into the page, edit content inline and publish - no technical skills required.
-                            </p>
-                        </div>
-
-                        
-
-                        
-
-                        
-                    </div>
-                </div>
-
-                <div id="tab6" class="tab-pane  mbr-table" role="tabpanel">
-                    <div class="row tab-content-row">
-                        <div class="col-xs-12 col-md-6">
-                            
-                            
-                            <p class="mbr-section-text  align-center mbr-fonts-style display-7">
-                                Choose from the large selection  pre-made blocks - full-screen intro, bootstrap carousel, slider, responsive image gallery with, parallax scrolling, sticky header and more.
-                            </p>
-                        </div>
-
-                        
-
-                        
-
-                        
-                    </div>
-                </div>
+                </div>                
             </div>
         </div>
     </div>
@@ -402,8 +326,79 @@
   };
   firebase.initializeApp(config);
   const storageService = firebase.storage();
-const storageRef = storageService.ref();
+const storageRef = storageService.ref(); 
+
+document.getElementById('submitFound').addEventListener('click', event => {
+  const Name = document.getElementById('Name').value;
+  const KidName = document.getElementById('KidName').value;
+  const Phone = document.getElementById('Phone').value;
+  const Email = document.getElementById('Email').value;
+  const Success = 'No'
+  const FaceToken = 'Null'
+  const MatchedUUID = 'Null'
+
+if(Phone != "" && KidName != "" && Name != "") {
+
+  const leadTimestamp = Math.floor(Date.now() / 1000);
+
+  firebase.database().ref('Found').once('value', snapshot => {
+    var totalLeads = snapshot.numChildren();
+    totalLeads++;
+
+    firebase.database().ref('Found').child(totalLeads).set({
+      Name: Name,
+      Phone: Phone,
+      KidName: KidName,
+      Email: Email,
+      Success: Success,
+      FaceToken: FaceToken,
+      MatchedUUID: MatchedUUID,
+      timestamp: leadTimestamp
+    });
+    $('.contact-form').hide();
+    $('.message-sent-success').show();
+
+  }, function(error) {
+    console.log(error);
+  });
+} else {
+  alert('Please fill all the fields.');
+  }
+});
 </script>
+
+<!--<script type="text/javascript">
+    $(document).ready(function () {
+        if ($('#newFound').length > 0 ) {
+            contactScript('forcontact');
+        }
+    });
+    //firebase
+    function contactScript(value) {
+        var a = { 
+            apiKey: "AIzaSyA5Afrm-mTqXpAl1gwJJoI0DseBwUkX1Dk",
+            authDomain: "reliefreunite123.firebaseapp.com",
+            databaseURL: "https://reliefreunite123.firebaseio.com",
+            projectId: "reliefreunite123",
+            storageBucket: "reliefreunite123.appspot.com",
+            messagingSenderId: "264220375831" };
+        firebase.initializeApp(a);
+        var b = firebase.database().ref("messages");
+        $(document).ready(function () {
+            $("#newFound").submit(function(a) { $(this), console.log("Submit to Firebase");
+            var c = $("#Name").val(),
+                d = $("#KidName").val(),
+                e= $("#Phone").val(),
+                f = $("#Email").val(),
+                g = { Name: c, KidName: d, Phone: e, Email: f, Success: No, FaceToken: Null, URL: Null, MatchedUUID: Null}; 
+            return b.push(g).then(function(a) { 
+                $(".sucess").css("display", "block"), 
+                $(".sucess-none").css("display", "none") }), !1 })   
+            });
+        }
+    </script>
+-->
+
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
@@ -416,8 +411,8 @@ const storageRef = storageService.ref();
   <script src="assets/mbr-tabs/mbr-tabs.js"></script>
   <script src="assets/dropdown/js/script.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
-  <script src="//code.jquery.com/jquery-1.12.2.min.js"></script>
-  <script type="text/javascript" src="angular.min.js"></script>
+
+  
   <script type="text/javascript" src="JIC.js"></script>
   <script type="text/javascript" src="custom.js"></script>
     

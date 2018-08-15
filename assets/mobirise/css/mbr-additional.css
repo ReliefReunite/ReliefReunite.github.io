@@ -711,20 +711,20 @@ pre {
   justify-content: center;
 }
 /* Forms */
-.mbr-form .btn {
+.sucess-none .btn {
   margin: .4rem 0;
 }
-.mbr-form .input-group-btn a.btn {
+.sucess-none .input-group-btn a.btn {
   border-radius: 100px !important;
 }
-.mbr-form .input-group-btn a.btn:hover {
+.sucess-none .input-group-btn a.btn:hover {
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
 }
-.mbr-form .input-group-btn button[type="submit"] {
+.sucess-none .input-group-btn button[type="submit"] {
   border-radius: 100px !important;
   padding: 1rem 3rem;
 }
-.mbr-form .input-group-btn button[type="submit"]:hover {
+.sucess-none .input-group-btn button[type="submit"]:hover {
   box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.2);
 }
 .form2 .form-control {
