@@ -470,11 +470,17 @@ if(Phone != "" && KidName != "" && Name != "") {
   const leadTimestamp = Math.floor(Date.now() / 1000);
 
 
+firebase.database().ref('Found').once('value', () => {
 
-    firebase.database().ref('Found').once('value', snapshot => {
-      var totalLeads = snapshot.numChildren();
-      totalLeads++;
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
 
+    var totalLeads = function uuidv4() {
+      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +  s4() + '-' + s4() + s4() + s4();
+  };
 
     firebase.database().ref('Found').child(totalLeads).set({
       Name: Name,
