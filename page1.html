@@ -343,11 +343,9 @@ if(Phone != "" && KidName != "" && Name != "") {
   const leadTimestamp = Math.floor(Date.now() / 1000);
 
     firebase.database().ref('Found').once('value', snapshot => {
-      var totalLeads = snapshot.numChildren();
-      totalLeads++;
 
 
-    firebase.database().ref('Found').child(totalLeads).set({
+    firebase.database().ref('Found').push({
       Name: Name,
       Phone: Phone,
       KidName: KidName,
@@ -394,10 +392,8 @@ document.getElementById('submitLost').addEventListener('click', event => {
 if(PhoneL != "" && KidNameL != "" && NameL != "") {
     const leadTimestampL = Math.floor(Date.now() / 1000);
     firebase.database().ref('Lost').once('value', snapshot => {
-      var totalLeads = snapshot.numChildren();
-      totalLeads++;
 
-      firebase.database().ref('Lost').child(totalLeads).set({
+      firebase.database().ref('Lost').push({
         Name: NameL,
         Phone: PhoneL,
         KidName: KidNameL,
