@@ -2,6 +2,8 @@ var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
 var foundimageURL;
 var lostimageURL;
+const leadTimestamp = Math.floor(Date.now() / 1000);
+const leadTimestampL = Math.floor(Date.now() / 1000);
 //var uploader = document.getElementById('uploader');
 
 foundImage.addEventListener('change', function(e) {
@@ -12,7 +14,7 @@ var file = e.target.files[0];
 //firebase.storage().ref('FoundKid/' + file.name);
 
 //upload file
-var task = storageRef.child('FoundKid/' + file.name).put(file);
+var task = storageRef.child(`FoundKid/${leadTimestamp}/${file.name}`).put(file);
 
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -41,7 +43,7 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
       // User canceled the upload
       break;
 
-    
+
 
     case 'storage/unknown':
       // Unknown error occurred, inspect error.serverResponse
@@ -52,7 +54,7 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
     console.log('File available at', downloadURL);
     foundimageURL = downloadURL;
-    
+
   });
 });
 
@@ -67,7 +69,7 @@ var file = e.target.files[0];
 //firebase.storage().ref('FoundKid/' + file.name);
 
 //upload file
-var task = storageRef.child('LostKid/' + file.name).put(file);
+var task = storageRef.child(`LostKid/${leadTimestampL}/${file.name}`).put(file);
 
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -96,7 +98,7 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
       // User canceled the upload
       break;
 
-    
+
 
     case 'storage/unknown':
       // Unknown error occurred, inspect error.serverResponse
@@ -123,11 +125,21 @@ document.getElementById('submitFound').addEventListener('click', event => {
   const FaceToken = 'Null'
   const MatchedUUID = 'Null'
 
-if(Phone != "" && KidName != "" && Name != "") {
+if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
+  if(lostimageURL==null){
+    swal({
+      icon: "error",
+      title: "Oops!",
+      text: "Please Upload the Image of the person Found",
+      button: "Upload",
+      closeOnClickOutside: false
+    });
+  }
 
-  const leadTimestamp = Math.floor(Date.now() / 1000);
+
 
     firebase.database().ref('Found').once('value', snapshot => {
+
 
 
     firebase.database().ref('Found').push({
@@ -175,8 +187,16 @@ document.getElementById('submitLost').addEventListener('click', event => {
   const SuccessL = 'No'
   const FaceTokenL = 'Null'
   const MatchedUUIDL = 'Null'
-if(PhoneL != "" && KidNameL != "" && NameL != "") {
-    const leadTimestampL = Math.floor(Date.now() / 1000);
+if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
+  if(lostimageURL==null){
+    swal({
+      icon: "error",
+      title: "Oops!",
+      text: "Please Upload the Image of the person Found",
+      button: "Upload",
+      closeOnClickOutside: false
+    });
+  }
     firebase.database().ref('Lost').once('value', snapshot => {
 
       firebase.database().ref('Lost').push({
@@ -214,4 +234,3 @@ if(PhoneL != "" && KidNameL != "" && NameL != "") {
     });
     }
 });
-

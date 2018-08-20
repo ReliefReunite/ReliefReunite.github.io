@@ -88,9 +88,9 @@
     <div class="container-fluid">
         <div class="row tabcont">
             <ul class="nav nav-tabs pt-3 mt-5" role="tablist">
-                <li class="nav-item mbr-fonts-style"><a class="nav-link active show display-7" role="tab" data-toggle="tab" href="https://goo.gl/forms/hslhv54uAaGBqmsX2" aria-selected="true">
+                <li class="nav-item mbr-fonts-style"><a class="nav-link active show display-7" role="tab" data-toggle="tab" aria-selected="true">
                         LOST</a></li>
-                <li class="nav-item mbr-fonts-style"><a class="nav-link  active show display-7" role="tab" data-toggle="tab" href="https://goo.gl/forms/cobo51P1bMncA6E92" aria-selected="true">
+                <li class="nav-item mbr-fonts-style"><a class="nav-link  active show display-7" role="tab" data-toggle="tab" aria-selected="true">
                         FOUND</a></li>
 
 
@@ -177,11 +177,16 @@
                                                         <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-b"></textarea>
                                                     </div>
                                                     <form action="POST">
-                                                        <input type="file" value="Upload" id = "lostImage" accept="image/*">
+                                                      <center>
+                                                        <input class="form-control" type="file" value="Upload" id = "lostImage" accept="image/*">
+                                                      </center>
                                                     </form>
+                                                    <br>
 
                                                     <span class="input-group-btn">
+                                                      <center>
                                                         <button id="submitLost" type="submit" class="btn btn-primary btn-form display-4">SEND FORM</button>
+                                                      </center>
                                                     </span>
                                                 </form>
                                         </div>
@@ -268,12 +273,28 @@
                                                     <label class="form-control-label mbr-fonts-style display-7" for="message-form1-b">Describe your situation</label>
                                                     <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-b"></textarea>
                                                 </div>
+                                                <style>
+                                                input[type=file] {
+                                                      width: auto;
+                                                      background-color: #e50054;
+                                                      color: white;
+                                                      padding: 14px 20px;
+                                                      margin: 8px 0;
+                                                      border: none;
+                                                      border-radius: 20px;
+                                                      cursor: pointer;
+                                                  }
+                                                input[type=file]:hover{
+                                                  opacity: 0.8;
+                                                }
+                                                </style>
                                                 <form action="POST">
                                                     <input type="file" value="Upload" id = "foundImage" accept="image/*">
                                                 </form>
-
                                                 <span class="input-group-btn">
-                                                    <button type="submit" value="Submit" name="submit" id="submitFound" class="btn btn-primary btn-form display-4">SEND FORM</button>
+                                                  <center>
+                                                    <button type="submit" value="Submit" name="submit" id="submitFound" class="btn btn-primary btn-form display-8">SEND FORM</button>
+                                                  </center>
                                                 </span>
                                             </form>
                                     </div>
@@ -320,7 +341,7 @@
     messagingSenderId: "264220375831"
   };
   firebase.initializeApp(config);
-  
+
 </script>
 
 <!--<script type="text/javascript">
