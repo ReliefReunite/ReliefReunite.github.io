@@ -177,10 +177,7 @@
                                                         <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-b"></textarea>
                                                     </div>
                                                     <form action="POST">
-                                                        <input type="file" name="demoImage" onchange="showPreview()" />
-                                                        <!--Preview:
-                                                        <img alt="" src="" width="500">-->
-                                                        <button type="button" ng-click="compressAndUpload()">Upload</button>
+                                                        <input type="file" value="Upload" id = "lostImage" accept="image/*">
                                                     </form>
 
                                                     <span class="input-group-btn">
@@ -272,10 +269,7 @@
                                                     <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-b"></textarea>
                                                 </div>
                                                 <form action="POST">
-                                                    <input type="file" name="demoImage" onchange="showPreview()" />
-                                                    <!--Preview:
-                                                    <img alt="" src="" width="500">-->
-                                                    <button type="button" ng-click="compressAndUpload()">Upload</button>
+                                                    <input type="file" value="Upload" id = "foundImage" accept="image/*">
                                                 </form>
 
                                                 <span class="input-group-btn">
@@ -473,6 +467,7 @@ if(PhoneL != "" && KidNameL != "" && NameL != "") {
   <script src="assets/mbr-tabs/mbr-tabs.js"></script>
   <script src="assets/dropdown/js/script.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
+  <script src="firebaseImageUpload.js"></script>
 
 
   <script type="text/javascript" src="JIC.js"></script>
