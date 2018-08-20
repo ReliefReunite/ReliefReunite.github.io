@@ -1,6 +1,7 @@
 var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
-
+var foundimageURL;
+var lostimageURL;
 //var uploader = document.getElementById('uploader');
 
 foundImage.addEventListener('change', function(e) {
@@ -50,12 +51,14 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   // Upload completed successfully, now we can get the download URL
   task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
     console.log('File available at', downloadURL);
-    var foundimageURL = downloadURL;
+    foundimageURL = downloadURL;
+    
   });
 });
 
 });
 
+//console.log('File available at' + foundimageURL);
 lostImage.addEventListener('change', function(e) {
   //get file
 var file = e.target.files[0];
@@ -103,9 +106,112 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   // Upload completed successfully, now we can get the download URL
   task.snapshot.ref.getDownloadURL().then(function(downloadURL) {
     console.log('File available at', downloadURL);
-    var lostimageURL = downloadURL;
+    lostimageURL = downloadURL;
   });
 });
 
+});
+const storageService = firebase.storage();
+const storageRef = storageService.ref();
+
+document.getElementById('submitFound').addEventListener('click', event => {
+  const Name = document.getElementById('Name').value;
+  const KidName = document.getElementById('KidName').value;
+  const Phone = document.getElementById('Phone').value;
+  const Email = document.getElementById('Email').value;
+  const Success = 'No'
+  const FaceToken = 'Null'
+  const MatchedUUID = 'Null'
+
+if(Phone != "" && KidName != "" && Name != "") {
+
+  const leadTimestamp = Math.floor(Date.now() / 1000);
+
+    firebase.database().ref('Found').once('value', snapshot => {
+
+
+    firebase.database().ref('Found').push({
+      Name: Name,
+      Phone: Phone,
+      KidName: KidName,
+      Email: Email,
+      Success: Success,
+      FaceToken: FaceToken,
+      MatchedUUID: MatchedUUID,
+      foundimageURL: foundimageURL,
+      timestamp: leadTimestamp
+    });
+    swal({
+      icon: "success",
+      title: "Success",
+      text: "Thank you for filling out this form, we will get back to you as soon as possible",
+      button: "OK",
+      closeOnClickOutside: false
+    }).then(function() {
+        location.reload();
+    });
+    $('.contact-form').hide();
+    $('.message-sent-success').show();
+
+  }, function(error) {
+    console.log(error);
+  });
+} else {
+  swal({
+    icon: "error",
+    title: "Oops!",
+    text: "Please Fill out all the fields",
+    button: "Fill out all the Fields!",
+    closeOnClickOutside: false
+  });
+  }
+});
+
+document.getElementById('submitLost').addEventListener('click', event => {
+  const NameL = document.getElementById('NameL').value;
+  const KidNameL = document.getElementById('KidNameL').value;
+  const PhoneL = document.getElementById('PhoneL').value;
+  const EmailL = document.getElementById('EmailL').value;
+  const SuccessL = 'No'
+  const FaceTokenL = 'Null'
+  const MatchedUUIDL = 'Null'
+if(PhoneL != "" && KidNameL != "" && NameL != "") {
+    const leadTimestampL = Math.floor(Date.now() / 1000);
+    firebase.database().ref('Lost').once('value', snapshot => {
+
+      firebase.database().ref('Lost').push({
+        Name: NameL,
+        Phone: PhoneL,
+        KidName: KidNameL,
+        Email: EmailL,
+        Success: SuccessL,
+        FaceToken: FaceTokenL,
+        MatchedUUID: MatchedUUIDL,
+        lostimageURL: lostimageURL,
+        timestamp: leadTimestampL
+      });
+
+      swal({
+        icon: "success",
+        title: "Success",
+        text: "Thank you for filling out this form, we will get back to you as soon as possible",
+        button: "OK",
+        closeOnClickOutside: false
+      }).then(function() {
+          location.reload();
+      });
+
+    }, function(error) {
+      console.log(error);
+    });
+  } else {
+    swal({
+      icon: "error",
+      title: "Oops!",
+      text: "Please Fill out all the fields",
+      button: "Fill out all the Fields!",
+      closeOnClickOutside: false
+    });
+    }
 });
 
