@@ -26,7 +26,7 @@ btnLogout.addEventListener('click', e=> {
                 window.location="index.html";
             }
             else{
-              
+
             }
           });
           });
@@ -37,9 +37,8 @@ var file = e.target.files[0];
 
 //create a storage ref
 //firebase.storage().ref('FoundKid/' + file.name);
-
 //upload file
-var task = storageRef.child(`FoundKid/${leadTimestamp}/${file.name}`).put(file);
+var task = storageRef.child(`FoundKid/${firebase.auth().currentUser.uid}${leadTimestamp}`).put(file);
 
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -47,6 +46,7 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log('Upload is ' + progress + '% done');
+    document.getElementById('foundProgressBar').innerHTML = `Upload is ${Math.round(progress)}% done`
     switch (snapshot.state) {
       case firebase.storage.TaskState.PAUSED: // or 'paused'
         console.log('Upload is paused');
@@ -94,7 +94,7 @@ var file = e.target.files[0];
 //firebase.storage().ref('FoundKid/' + file.name);
 
 //upload file
-var task = storageRef.child(`LostKid/${leadTimestampL}/${file.name}`).put(file);
+var task = storageRef.child(`LostKid/${firebase.auth().currentUser.uid}${leadTimestampL}`).put(file);
 
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -102,6 +102,7 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
     // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
     var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log('Upload is ' + progress + '% done');
+    document.getElementById('lostProgressBar').innerHTML = `Upload is ${Math.round(progress)}% done`
     switch (snapshot.state) {
       case firebase.storage.TaskState.PAUSED: // or 'paused'
         console.log('Upload is paused');
