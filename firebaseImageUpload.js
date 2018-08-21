@@ -26,7 +26,7 @@ btnLogout.addEventListener('click', e=> {
                 window.location="index.html";
             }
             else{
-
+              console.log(firebase.auth().currentUser.email);
             }
           });
           });
@@ -140,12 +140,11 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
 });
 const storageService = firebase.storage();
 const storageRef = storageService.ref();
-
+  document.getElementById('Name').value = firebase.auth().currentUser.displayName;
+  document.getElementById('Email').value = firebase.auth().currentUser.email;
 document.getElementById('submitFound').addEventListener('click', event => {
-  const Name = document.getElementById('Name').value;
   const KidName = document.getElementById('KidName').value;
   const Phone = document.getElementById('Phone').value;
-  const Email = document.getElementById('Email').value;
   const Success = 'No'
   const FaceToken = 'Null'
   const MatchedUUID = 'Null'
@@ -168,10 +167,10 @@ if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
 
 
     firebase.database().ref('Found').push({
-      Name: Name,
+      Name: firebase.auth().currentUser.displayName,
       Phone: Phone,
       KidName: KidName,
-      Email: Email,
+      Email: firebase.auth().currentUser.email,
       Success: Success,
       FaceToken: FaceToken,
       MatchedUUID: MatchedUUID,
@@ -204,11 +203,12 @@ if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
   }
 });
 
+document.getElementById('NameL').value = firebase.auth().currentUser.displayName;
+document.getElementById('EmailL').value = firebase.auth().currentUser.email;
+
 document.getElementById('submitLost').addEventListener('click', event => {
-  const NameL = document.getElementById('NameL').value;
   const KidNameL = document.getElementById('KidNameL').value;
   const PhoneL = document.getElementById('PhoneL').value;
-  const EmailL = document.getElementById('EmailL').value;
   const SuccessL = 'No'
   const FaceTokenL = 'Null'
   const MatchedUUIDL = 'Null'

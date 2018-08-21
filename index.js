@@ -1,7 +1,8 @@
 firebase.auth().onAuthStateChanged(firebaseUser => {
-  const hide = document.getElementById('hide');
+  const hideLogout = document.getElementById('hideLogout');
+  const btnReunite = document.getElementById('btnReunite');
   if(firebaseUser){
-    hide.classList.remove('hide');
+    hideLogout.classList.remove('hide');
     const btnLogout = document.getElementById('btnLogout');
     btnLogout.addEventListener('click', e=> {
             swal({
@@ -20,9 +21,14 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                 }
               });
               });
-
+    btnReunite.addEventListener('click', e=> {
+      window.location="page1.html";
+    });
   }
   else{
-    hide.classList.add('hide');
+    btnReunite.addEventListener('click', e=> {
+      window.location="login.html";
+    });
+    hideLogout.classList.add('hide');
   }
 });

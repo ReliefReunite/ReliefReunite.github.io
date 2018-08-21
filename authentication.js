@@ -46,8 +46,10 @@ var err;
           const email = emailSignUp.value;
           const pass = passwordSignUp.value;
           const auth = firebase.auth();
-          var user = auth.currentUser;
-          const promise = auth.createUserWithEmailAndPassword(email, pass);
+          const user = auth.currentUser;
+          const promise = auth.createUserWithEmailAndPassword(email, pass).then(function(user) {
+          firebase.auth().currentUser.updateProfile({displayName: name.value });
+        });
 
           promise.catch(e => {
             console.log(e.message);

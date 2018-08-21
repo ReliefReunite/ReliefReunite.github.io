@@ -13,12 +13,12 @@ var hide = document.getElementById('hide');
                window.location = "page1.html";
              }
              else{
-               console.log(firebaseUser.displayName);
+               console.log(firebase.auth().currentUser.name);
                hide.classList.remove('hide');
                var user = firebase.auth().currentUser;
 
                user.sendEmailVerification().then(function() {
-                 
+
                }).catch(function(error) {
                  // An error happened.
                })
