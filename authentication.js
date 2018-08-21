@@ -9,7 +9,7 @@ const name = document.getElementById('name');
 var err;
 
     btnLogin.addEventListener('click', e =>{
-      if(emailLogin.value!=="" || passwordLogin.value!==""){
+      if(emailLogin.value!=="" || passwordLogin.value!=="" || name.value!==""){
         const email = emailLogin.value;
         const pass = passwordLogin.value;
         const auth = firebase.auth();
