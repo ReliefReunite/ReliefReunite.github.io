@@ -1,10 +1,35 @@
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+if(firebaseUser){
+  if(firebaseUser.emailVerified===true){
+  const hide = document.getElementById('hide');
+  hide.classList.remove('hide');
 var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
 var foundimageURL;
 var lostimageURL;
 const leadTimestamp = Math.floor(Date.now() / 1000);
 const leadTimestampL = Math.floor(Date.now() / 1000);
+const btnLogout = document.getElementById('btnLogout');
 //var uploader = document.getElementById('uploader');
+
+btnLogout.addEventListener('click', e=> {
+        swal({
+        icon: "warning",
+        title: "Are You Sure?",
+        buttons: ["Back", "Log Out!"],
+        dangerMode: true,
+        closeOnClickOutside: false})
+        .then((willDelete) => {
+            if(willDelete){
+                firebase.auth().signOut();
+                window.location="index.html";
+            }
+            else{
+
+            }
+          });
+          });
 
 foundImage.addEventListener('change', function(e) {
   //get file
@@ -233,4 +258,37 @@ if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
       closeOnClickOutside: false
     });
     }
+});
+
+}
+else{
+  const hide = document.getElementById('hide');
+  hide.classList.add('hide');
+  swal({
+    icon: "error",
+    title: "Oops!",
+    text: "Sorry, You have to Verify your email account before using it!",
+    button: "Verify",
+    closeOnClickOutside: false
+  }).then(function(){
+    window.location = "verify-email.html";
+  });
+}
+
+}
+
+else{
+  const hide = document.getElementById('hide');
+  hide.classList.add('hide');
+  swal({
+    icon: "error",
+    title: "Oops!",
+    text: "Sorry, You have to Sign In to Submit your data!",
+    button: "Sign In!",
+    closeOnClickOutside: false
+  }).then(function(){
+    window.location = "login.html";
+  });
+}
+
 });
