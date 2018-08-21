@@ -226,10 +226,10 @@ if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
     firebase.database().ref('Lost').once('value', snapshot => {
 
       firebase.database().ref('Lost').push({
-        Name: NameL,
+        Name: firebase.auth().currentUser.displayName,
         Phone: PhoneL,
         KidName: KidNameL,
-        Email: EmailL,
+        Email: firebase.auth().currentUser.email,
         Success: SuccessL,
         FaceToken: FaceTokenL,
         MatchedUUID: MatchedUUIDL,
