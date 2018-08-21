@@ -40,7 +40,7 @@ var file = e.target.files[0];
 //create a storage ref
 //firebase.storage().ref('FoundKid/' + file.name);
 //upload file
-var task = storageRef.child(`FoundKid/${firebase.auth().currentUser.uid}_${leadTimestamp}_${file.name}`).put(file);
+var task = storageRef.child(`FoundKid/${firebase.auth().currentUser.email}_${leadTimestamp}`).put(file);
 fileTypeF = file.name.split('.').pop();
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -89,7 +89,7 @@ task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
 
 //console.log('File available at' + foundimageURL);
 lostImage.addEventListener('change', function(e) {
-  //get file
+//get file
 var file = e.target.files[0];
 
 //create a storage ref
