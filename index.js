@@ -1,6 +1,6 @@
 firebase.auth().onAuthStateChanged(firebaseUser => {
   const hideLogout = document.getElementById('hideLogout');
-  const btnReunite = document.getElementById('btnReunite');
+  const btnReunite = document.getElementsByClassName('btnReunite');
   if(firebaseUser){
     hideLogout.classList.remove('hide');
     const btnLogout = document.getElementById('btnLogout');
@@ -21,14 +21,16 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                 }
               });
               });
-    btnReunite.addEventListener('click', e=> {
-      window.location="page1.html";
-    });
+            for(var i=0; i<btnReunite.length; i++){
+              btnReunite[i].addEventListener('click', e=> {
+              window.location="page1.html";
+    });}
   }
   else{
-    btnReunite.addEventListener('click', e=> {
+  hideLogout.classList.add('hide');
+  for(var i=0; i<btnReunite.length; i++){
+    btnReunite[i].addEventListener('click', e=> {
       window.location="login.html";
-    });
-    hideLogout.classList.add('hide');
+    });}
   }
 });

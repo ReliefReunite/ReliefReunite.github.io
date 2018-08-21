@@ -26,7 +26,7 @@ btnLogout.addEventListener('click', e=> {
                 window.location="index.html";
             }
             else{
-              console.log(firebase.auth().currentUser.email);
+              
             }
           });
           });
