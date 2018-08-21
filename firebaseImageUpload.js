@@ -8,6 +8,8 @@ var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
 var foundimageURL;
 var lostimageURL;
+var fileTypeF;
+var fileTypeL;
 const leadTimestamp = Math.floor(Date.now() / 1000);
 const leadTimestampL = Math.floor(Date.now() / 1000);
 const btnLogout = document.getElementById('btnLogout');
@@ -38,8 +40,8 @@ var file = e.target.files[0];
 //create a storage ref
 //firebase.storage().ref('FoundKid/' + file.name);
 //upload file
-var task = storageRef.child(`FoundKid/${firebase.auth().currentUser.uid}${leadTimestamp}`).put(file);
-
+var task = storageRef.child(`FoundKid/${firebase.auth().currentUser.uid}_${leadTimestamp}_${file.name}`).put(file);
+fileTypeF = file.name.split('.').pop();
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   function(snapshot) {
@@ -94,8 +96,8 @@ var file = e.target.files[0];
 //firebase.storage().ref('FoundKid/' + file.name);
 
 //upload file
-var task = storageRef.child(`LostKid/${firebase.auth().currentUser.uid}${leadTimestampL}`).put(file);
-
+var task = storageRef.child(`LostKid/${firebase.auth().currentUser.email}_${leadTimestampL}`).put(file);
+fileTypeL = file.name.split('.').pop();
 // Listen for state changes, errors, and completion of the upload.
 task.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
   function(snapshot) {
@@ -171,6 +173,7 @@ if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
       Name: firebase.auth().currentUser.displayName,
       Phone: Phone,
       KidName: KidName,
+      fileType: fileTypeF,
       Email: firebase.auth().currentUser.email,
       Success: Success,
       FaceToken: FaceToken,
@@ -229,6 +232,7 @@ if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
         Name: firebase.auth().currentUser.displayName,
         Phone: PhoneL,
         KidName: KidNameL,
+        fileType: fileTypeL,
         Email: firebase.auth().currentUser.email,
         Success: SuccessL,
         FaceToken: FaceTokenL,
