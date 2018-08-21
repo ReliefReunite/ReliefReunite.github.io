@@ -155,7 +155,7 @@ if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
     swal({
       icon: "error",
       title: "Oops!",
-      text: "Please Upload the Image of the person Found",
+      text: "Please Upload the Image of the person.",
       button: "Upload",
       closeOnClickOutside: false
     });
@@ -218,7 +218,7 @@ if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
     swal({
       icon: "error",
       title: "Oops!",
-      text: "Please Upload the Image of the person Found",
+      text: "Please Upload the Image of the person.",
       button: "Upload",
       closeOnClickOutside: false
     });
