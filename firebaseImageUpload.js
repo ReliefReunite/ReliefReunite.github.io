@@ -3,6 +3,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 if(firebaseUser){
   if(firebaseUser.emailVerified===true){
   const hide = document.getElementById('hide');
+  hide.classList.remove('hide');
 var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
 var foundimageURL;
@@ -13,8 +14,6 @@ const leadTimestamp = Math.floor(Date.now() / 1000);
 const leadTimestampL = Math.floor(Date.now() / 1000);
 const btnLogout = document.getElementById('btnLogout');
 //var uploader = document.getElementById('uploader');
-hide.classList.remove('hide');
-btnLogout.classList.remove('hide');
 
 btnLogout.addEventListener('click', e=> {
         swal({
