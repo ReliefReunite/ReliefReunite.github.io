@@ -7,6 +7,7 @@ const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
 const name = document.getElementById('name');
 var err;
+const btnGoogleLogin = document.getElementById('btnGoogleLogin');
 
     btnLogin.addEventListener('click', e =>{
       if(emailLogin.value!=="" || passwordLogin.value!=="" || name.value!==""){
@@ -39,6 +40,14 @@ var err;
           closeOnClickOutside: false
         });
       }
+    });
+
+    btnGoogleLogin.addEventListener('click', e=>{
+      var provider = new firebase.auth.GoogleAuthProvider();
+      const promise = firebase.auth().signInWithPopup(provider);
+      promise.catch(e => {
+        console.log(e.message);
+      });
     });
 
     btnSignUp.addEventListener('click', e => {
