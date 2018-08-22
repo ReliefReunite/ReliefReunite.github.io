@@ -26,9 +26,10 @@
 
 
 </head>
-<body ng-controller="demoController">
-  <section class="menu cid-r0kqnUFElh" once="menu" id="menu2-l">
+<body ng-controller="demoController" style="overflow-x: hidden">
 
+
+  <section class="menu cid-r0kqnUFElh" once="menu" id="menu2-l">
 
 
     <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent">
@@ -130,7 +131,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="container">
+                                <div class="container"  style="width: 85%;">
                                     <div class="row justify-content-center">
                                         <div class="media-container-column col-lg-8" data-form-type="formoid">
                                                 <div data-form-alert="" hidden="">
@@ -183,7 +184,7 @@
                                                     </div>
                                                     <form action="POST">
                                                       <center>
-                                                        <input class="form-control" type="file" value="Upload" id = "lostImage" accept="image/*">
+                                                        <input class="form-control" type="file"  style="width: 90%;" value="Upload" id = "lostImage" accept="image/*">
                                                         <p id="lostProgressBar"></p>
                                                       </center>
                                                     </form>
@@ -229,7 +230,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="container">
+                            <div class="container" style="width: 85%">
                                 <div class="row justify-content-center">
                                     <div class="media-container-column col-lg-8" data-form-type="formoid">
                                             <div data-form-alert="" hidden="">
@@ -237,6 +238,7 @@
                                             </div>
 
                                             <form class="sucess-none" action="" method="post" id = "newFound" data-form-title="Found Form"><input type="hidden">
+                                              <div class="row row-sm-offset">
                                                     <div class="col-md-4 multi-horizontal" data-for="Name">
                                                         <div class="form-group">
                                                             <label class="form-control-label mbr-fonts-style display-7" for="name-form1-b" required>Your Name</label>
@@ -295,8 +297,10 @@
                                                 }
                                                 </style>
                                                 <form action="POST">
-                                                    <input type="file" value="Upload" id = "foundImage" accept="image/*">
+                                                  <center>
+                                                    <input type="file" value="Upload" style="width: 90%;" id = "foundImage" accept="image/*">
                                                     <p id="foundProgressBar"></p>
+                                                  </center>
                                                 </form>
                                                 <span class="input-group-btn">
                                                   <center>
