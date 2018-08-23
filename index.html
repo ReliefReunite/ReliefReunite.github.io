@@ -56,13 +56,53 @@
                               .hide{
                                 display: none;
                               }
+                      @media screen and (min-width: 1025px){
+                            #user-pic {
+                              top: -3px;
+                              position: relative;
+                              width: 40px;
+                              height: 40px;
+                              background-size: 40px;
+                              border-radius: 20px;
+                              margin-top: 5px;
+                            }
+                            .btnReunite{
+                              padding-right: 10px;
+                            }
+                          }
+                            .inline{
+                              display: inline;
+                            }
+                            @media screen and (max-width: 1024px){
+                              .inline{
+                                display: inline-block;
+                                font-size: 5px;
+                              }
+
+                              #user-pic {
+                                top: -3px;
+                                position: relative;
+                                border-radius: 40px;
+                                margin-top: 5px;
+                              }
+                            }
                             </style>
                     </li><!-- <li class="nav-item"><a class="nav-link link text-black display-4" href="#features6-6">
                             Features</a></li> -->
-                            
-                            <li class="nav-item"><a class="nav-link link text-black display-4" href="#features16-p">Team</a></li></ul>
-                <div class="navbar-buttons mbr-section-btn btnReunite"><button class="btn btn-sm btn-primary display-4">Reunite!</button></div>
-                <div class="navbar-buttons mbr-section-btn" id="hideLogout"><button id="btnLogout" class="btn btn-sm btn-primary display-4 hide">Log Out</button></div>
+
+                            <li class="nav-item"><a class="nav-link link text-black display-4" href="#features16-p">Team</a>
+                            </li></ul>
+
+
+
+                  <div class="navbar-buttons mbr-section-btn btn btnReunite"><button  class="btn btn-sm btn-primary display-4">Reunite!</button></div>
+                  <div class="nav-item inline"  id="user-pic">
+                  </div>
+                  <div class="nav-item inline">
+                      <a  class="nav-link" style="color: black; font-size: 15px;" id="user-name"></a>
+                  </div>
+                  <div class="navbar-buttons mbr-section-btn btn" id="hideLogout"><button id="btnLogout" class="btn btn-sm btn-primary display-4 hide">Log Out</button></div>
+
             </div>
         </nav>
     </section>

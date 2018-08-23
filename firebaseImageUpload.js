@@ -3,7 +3,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 if(firebaseUser){
   if(firebaseUser.emailVerified===true){
   const hide = document.getElementById('hide');
-  hide.classList.remove('hide');
 var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
 var foundimageURL;
@@ -13,7 +12,38 @@ var fileTypeL;
 const leadTimestamp = Math.floor(Date.now() / 1000);
 const leadTimestampL = Math.floor(Date.now() / 1000);
 const btnLogout = document.getElementById('btnLogout');
+
+btnLogout.classList.remove('hide');
 //var uploader = document.getElementById('uploader');
+
+/*BEGIN USER GREETING*/
+const userPicElement = document.getElementById('user-pic');
+const userNameElement = document.getElementById('user-name');
+
+// Returns the signed-in user's profile Pic URL.
+function getProfilePicURL(){
+  return firebase.auth().currentUser.photoURL || '/assets/images/profile_placeholder.png';
+}
+
+// Returns the signed-in user's display name.
+function getUserName() {
+  return firebase.auth().currentUser.displayName;
+}
+
+    // Get the signed-in user's profile pic and name.
+    var profilePicUrl = getProfilePicURL();
+    var userName = getUserName();
+
+    // Set the user's profile pic and name.
+    userPicElement.innerHTML =  `<img src='${profilePicUrl}' id="user-pic">`;
+    if(userName === null){
+    userNameElement.innerHTML = `<b>Welcome, User</b>`;
+    }
+    else{
+    userNameElement.innerHTML = `<b>Welcome, ${userName}</b>`;
+  }
+  /*END USER GREETING*/
+
 
 btnLogout.addEventListener('click', e=> {
         swal({
