@@ -210,7 +210,7 @@ if(Phone != "" && KidName != "" && Name != "" && EmailL!= "" && message!="" && A
       fileType: fileTypeF,
       Email: firebase.auth().currentUser.email,
       Age: Age,
-      IdentificationMark: IdentificationMarL,
+      IdentificationMark: IdentificationMarkL,
       Message: message,
       Success: Success,
       FaceToken: FaceToken,
