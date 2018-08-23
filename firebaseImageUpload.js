@@ -179,11 +179,14 @@ const storageRef = storageService.ref();
 document.getElementById('submitFound').addEventListener('click', event => {
   const KidName = document.getElementById('KidName').value;
   const Phone = document.getElementById('Phone').value;
+  const AgeL = document.getElementById('Age').value;
+  const IdentificationMarkL = document.getElementById('IdentificationMark').value;
+  const messageL = document.getElementById('message').value;
   const Success = 'No'
   const FaceToken = 'Null'
   const MatchedUUID = 'Null'
 
-if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
+if(Phone != "" && KidName != "" && Name != "" && EmailL!= "" && message!="" && Age!="" && IdentificationMark!="") {
   if(lostimageURL==null){
     swal({
       icon: "error",
@@ -206,6 +209,9 @@ if(Phone != "" && KidName != "" && Name != "" && EmailL!= "") {
       KidName: KidName,
       fileType: fileTypeF,
       Email: firebase.auth().currentUser.email,
+      Age: Age,
+      IdentificationMark: IdentificationMarL,
+      Message: message,
       Success: Success,
       FaceToken: FaceToken,
       MatchedUUID: MatchedUUID,
@@ -244,10 +250,13 @@ document.getElementById('EmailL').value = firebase.auth().currentUser.email;
 document.getElementById('submitLost').addEventListener('click', event => {
   const KidNameL = document.getElementById('KidNameL').value;
   const PhoneL = document.getElementById('PhoneL').value;
+  const AgeL = document.getElementById('AgeL').value;
+  const IdentificationMarkL = document.getElementById('IdentificationMarkL').value;
+  const messageL = document.getElementById('messageL').value;
   const SuccessL = 'No'
   const FaceTokenL = 'Null'
   const MatchedUUIDL = 'Null'
-if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
+if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "" && messageL!="" && AgeL!="" && IdentificationMarkL!="") {
   if(lostimageURL==null){
     swal({
       icon: "error",
@@ -265,6 +274,9 @@ if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "") {
         KidName: KidNameL,
         fileType: fileTypeL,
         Email: firebase.auth().currentUser.email,
+        Age: AgeL,
+        IdentificationMark: IdentificationMarkL,
+        Message: messageL,
         Success: SuccessL,
         FaceToken: FaceTokenL,
         MatchedUUID: MatchedUUIDL,
