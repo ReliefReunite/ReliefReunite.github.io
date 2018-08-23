@@ -1,8 +1,9 @@
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
+
+  const hide = document.getElementById('hideLogout');
 if(firebaseUser){
   if(firebaseUser.emailVerified===true){
-  const hide = document.getElementById('hide');
 var foundImage = document.getElementById('foundImage');
 var lostImage = document.getElementById('lostImage');
 var foundimageURL;
@@ -313,7 +314,7 @@ else{
 }
 
 else{
-  const hide = document.getElementById('hide');
+  const hide = document.getElementById('hideLogout');
   hide.classList.add('hide');
   swal({
     icon: "error",

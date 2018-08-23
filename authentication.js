@@ -5,12 +5,12 @@ const passwordSignUp = document.getElementById('passwordSignUp');
 const btnLogin = document.getElementById('btnLogin');
 const btnSignUp = document.getElementById('btnSignUp');
 const btnLogout = document.getElementById('btnLogout');
-const name = document.getElementById('name');
+const name = document.getElementById('nameSignUp');
 var err;
 const btnGoogleLogin = document.getElementById('btnGoogleLogin');
 
     btnLogin.addEventListener('click', e =>{
-      if(emailLogin.value!=="" || passwordLogin.value!=="" || name.value!==""){
+      if(emailLogin.value!=="" && passwordLogin.value!==""){
         const email = emailLogin.value;
         const pass = passwordLogin.value;
         const auth = firebase.auth();
@@ -51,7 +51,8 @@ const btnGoogleLogin = document.getElementById('btnGoogleLogin');
   });
 
     btnSignUp.addEventListener('click', e => {
-        if(emailSignUp.value!=="" || passwordSignUp.value!==""){
+        if(emailSignUp.value!=="" && name.value!=="" && passwordSignUp.value!==""){
+          console.log(name.value);
           const email = emailSignUp.value;
           const pass = passwordSignUp.value;
           const auth = firebase.auth();
@@ -62,7 +63,7 @@ const btnGoogleLogin = document.getElementById('btnGoogleLogin');
 
           promise.catch(e => {
             console.log(e.message);
-            if(e.message=="Password should be at least 6 characters"){
+            if(e.message=="Password should be at least 6 characters" || e.message == "The password must be 6 characters long or more."){
               swal({
                 icon: "error",
                 title: "Oops!",
@@ -95,7 +96,7 @@ const btnGoogleLogin = document.getElementById('btnGoogleLogin');
           swal({
             icon: "error",
             title: "Oops!",
-            text: "Please Enter Your Email and Password. Try Again!",
+            text: "Please Fill out All the fields!",
             button: "OK",
             closeOnClickOutside: false
           });
