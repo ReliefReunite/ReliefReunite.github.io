@@ -186,7 +186,7 @@ document.getElementById('submitFound').addEventListener('click', event => {
   const FaceToken = 'Null'
   const MatchedUUID = 'Null'
 
-if(Phone != "" && KidName != "" && Name != "" && EmailL!= "" && message!="" && Age!="" && IdentificationMark!="") {
+if(Phone != "" && KidName != "" && Name != "" && EmailL!= "" && Age!="" && IdentificationMark!="") {
   if(lostimageURL==null){
     swal({
       icon: "error",
@@ -256,7 +256,7 @@ document.getElementById('submitLost').addEventListener('click', event => {
   const SuccessL = 'No'
   const FaceTokenL = 'Null'
   const MatchedUUIDL = 'Null'
-if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "" && messageL!="" && AgeL!="" && IdentificationMarkL!="") {
+if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "" && AgeL!="" && IdentificationMarkL!="") {
   if(lostimageURL==null){
     swal({
       icon: "error",
