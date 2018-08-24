@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="assets/images/logo1.png" type="image/x-icon">
+    <title>Sign In | Reunite</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified CSS-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<!--Compiled and minified JavaScript-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="assets/auth.css">
+  </head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+      <div id="form" class="register-form">
+        <h1>Create an account</h1>
+        <input type="text" id="nameSignUp" placeholder="Full Name" required/>
+        <input type="email" id="emailSignUp" oninvalid="this.setCustomValidity('Please Enter a valid Email Address')" required placeholder="Email Address"/>
+        <input type="password"  id="passwordSignUp" required placeholder="Password"/>
+        <button id="btnSignUp">create</button>
+        <p class="messagelog">Already registered? <a href="#">Sign In</a></p>
+      </div>
+      <div id="form" class="login-form">
+        <h1>Sign In</h1>
+        <input type="email" id="emailLogin" placeholder="Email Address" required oninvalid="this.setCustomValidity('Please Enter a valid Email Address')" />
+        <input type="password" id="passwordLogin" placeholder="Password" required />
+        <p  class="message" style="margin-top: 0px; float:right;"><a href="password-reset.html" >Forgot Password?</a></p>
+        <br>
+        <br>
+        <button id="btnLogin">login</button>
+        <p class="message">Not registered? <a href="#">Create an account</a></p>
+        <br>
+        <hr>
+        <h4>OR</h4>
+        <div class="btn white darken-4 col s10 m4">
+        <a id="btnGoogleLogin" style="text-transform:none">
+         <div class="left">
+             <img width="20px" style="padding-top: 10px; padding-right: 5px;" alt="Google &quot;G&quot; Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
+         </div>
+         <b>Login with Google</b>
+        </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  $('.message a').click(function(){
+    $('.login-form').hide();
+   $('#form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+
+  $('.messagelog a').click(function(){
+    $('.login-form').slideDown();
+   $('#form').animate({height: "toggle", opacity: "toggle"}, "slow");
+  });
+</script>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA5Afrm-mTqXpAl1gwJJoI0DseBwUkX1Dk",
+    authDomain: "reliefreunite123.firebaseapp.com",
+    databaseURL: "https://reliefreunite123.firebaseio.com",
+    projectId: "reliefreunite123",
+    storageBucket: "reliefreunite123.appspot.com",
+    messagingSenderId: "264220375831"
+  };
+  firebase.initializeApp(config);
+
+</script>
+<script src="authentication.js"></script>
+</body>
+</html>

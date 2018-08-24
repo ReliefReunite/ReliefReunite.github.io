@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Email Verification | Reunite</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="assets/images/logo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="assets/auth.css">
+  </head>
+
+<body>
+  <style>
+    .hide{
+      display: none;
+    }
+  </style>
+  <div class="hide" id="hide">
+  <div class="login-page">
+    <div class="form">
+      <div class="verify-email">
+        <h4>Please check your email and hit the link in the verification email.</h4>
+        <button id="verify-button" onclick="send_verification()">Re-send Verification Email</button>
+        <p>Once you're done verifying your email <a href="../verify-email.html">click here</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA5Afrm-mTqXpAl1gwJJoI0DseBwUkX1Dk",
+    authDomain: "reliefreunite123.firebaseapp.com",
+    databaseURL: "https://reliefreunite123.firebaseio.com",
+    projectId: "reliefreunite123",
+    storageBucket: "reliefreunite123.appspot.com",
+    messagingSenderId: "264220375831"
+  };
+  firebase.initializeApp(config);
+
+</script>
+<script src="verify.js"></script>
+</body>
+</html>
