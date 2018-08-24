@@ -13,7 +13,6 @@ var hide = document.getElementById('hide');
                window.location = "page1.html";
              }
              else{
-               console.log(firebase.auth().currentUser.name);
                hide.classList.remove('hide');
                var user = firebase.auth().currentUser;
 

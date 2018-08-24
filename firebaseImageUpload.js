@@ -310,7 +310,7 @@ if(PhoneL != "" && KidNameL != "" && NameL != "" && EmailL!= "" && AgeL!="" && I
 
 }
 else{
-  const hide = document.getElementById('hide');
+  const hide = document.getElementById('hideLogout');
   hide.classList.add('hide');
   swal({
     icon: "error",
