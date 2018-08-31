@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124897962-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-124897962-1');
+</script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="assets/images/logo1.png" type="image/x-icon">
@@ -9,6 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Compiled and minified CSS-->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <!--Compiled and minified JavaScript-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <link rel="stylesheet" href="assets/auth.css">
@@ -22,13 +33,15 @@
         <input type="text" id="nameSignUp" placeholder="Full Name" required/>
         <input type="email" id="emailSignUp" oninvalid="this.setCustomValidity('Please Enter a valid Email Address')" required placeholder="Email Address"/>
         <input type="password"  id="passwordSignUp" required placeholder="Password"/>
+        <span toggle="#passwordSignUp" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         <button id="btnSignUp">create</button>
         <p class="messagelog">Already registered? <a href="#">Sign In</a></p>
       </div>
       <div id="form" class="login-form">
         <h1>Sign In</h1>
         <input type="email" id="emailLogin" placeholder="Email Address" required oninvalid="this.setCustomValidity('Please Enter a valid Email Address')" />
-        <input type="password" id="passwordLogin" placeholder="Password" required />
+        <input type="password" id="passwordLogin" class="eye" placeholder="Password" required />
+        <span toggle="#passwordLogin" class="fa fa-fw fa-eye field-icon toggle-password"></span>
         <p  class="message" style="margin-top: 0px; float:right;"><a href="password-reset.html" >Forgot Password?</a></p>
         <br>
         <br>
@@ -59,6 +72,18 @@
     $('.login-form').slideDown();
    $('#form').animate({height: "toggle", opacity: "toggle"}, "slow");
   });
+
+//toggle eye
+  $(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
 </script>
 
 
